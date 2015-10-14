@@ -1,0 +1,7 @@
+curl --include --request POST --header "Content-Type: application/json" -d '{
+  "credentials": {
+    "email": "foo@bar.com",
+    "password": "password",
+    "password_confirmation": "password"
+  }
+}' http://ttt.wdibos.com/users
