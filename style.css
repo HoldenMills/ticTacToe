@@ -1,0 +1,33 @@
+
+  .board {
+    background-color: black;
+    height: 540px;
+    width: 540px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .board p {
+    background-color: red;
+    height: 120px;
+    width: 120px;
+    display: inline-block;
+    margin: 30px;
+    float: right;
+  }
+
+  #main-button {
+    border-color: blue;
+    width: 100px;
+    height: 60px
+
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+
+
+

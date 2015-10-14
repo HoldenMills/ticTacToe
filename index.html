@@ -1,37 +1,18 @@
 
 <!DOCTYPE html>
 <html>
-<style>
-  .Board {
-    background-color: black;
-    height: 540px;
-    width: 540px;
-    overflow: auto;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .Board p {
-    background-color: red;
-    height: 120px;
-    width: 120px;
-    display: inline-block;
-    margin: 30px;
-    float: right;
-  }
-
-  #main-button {
-    border-color: blue;
-    width: 100px;
-    height: 60px
-
-  }
-
-  h1 {
-    text-align: center;
-  }
-
-</style>
+<head>
+  <title>A tic-tac-toe client</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js" defer charset="utf-8"></script>
+  <script type="text/javascript" src="http://ttt.wdibos.com/js/resource-watcher-0.1.0.js" defer charset="utf-8"></script>
+  <script type="text/javascript" src="index.js" defer charset="utf-8"></script>
+<!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="javascript.js" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">-->
+</head>
 
 <body>
 
@@ -39,7 +20,7 @@
 
 <button id="main-button" name="button"></button>
 
-<div class="Board">
+<div class="board">
   <p data-square="Box1"></p>
   <p data-square="Box2"></p>
   <p data-square="Box3"></p>
