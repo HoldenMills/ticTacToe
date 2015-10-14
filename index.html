@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
+
 <head>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
-<body>
-
 <style>
-  .board {
+
+.board {
     background-color: black;
     height: 540px;
     width: 540px;
@@ -30,7 +30,14 @@
     height: 60px
 
   }
-  </style>
+
+  h1 {
+    text-align: center;
+  }
+</style>
+<body>
+
+
 
   h1 {
     text-align: center;
@@ -103,31 +110,17 @@
 <button id="main-button" name="button"></button>
 
 <div class="board">
-  <button data-square="b1"></button>
-  <button data-square="b2"></button>
-  <button data-square="b3"></button>
-  <button data-square="b4"></button>
-  <button data-square="b5"></button>
-  <button data-square="b6"></button>
-  <button data-square="b7"></button>
-  <button data-square="b8"></button>
-  <button data-square="b9"></button>
+  <button id = "b1"  onclick="parClicked(1)"></button>
+  <button id = "b2"  onclick="parClicked(1)"></button>
+  <button id = "b3"  onclick="parClicked(1)"></button>
+  <button id = "b4"  onclick="parClicked(1)"></button>
+  <button id = "b5"  onclick="parClicked(1)"></button>
+  <button id = "b6"  onclick="parClicked(1)"></button>
+  <button id = "b7"  onclick="parClicked(1)"></button>
+  <button id = "b8"  onclick="parClicked(1)"></button>
+  <button id = "b9"  onclick="parClicked(1)"></button>
+
 </div>
-
-//Instanciate Arrays
-        window.onload=function();
-painted = new Array();
-content = new Array();
-
-winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-
-
-
-for(var l = 0; l <= 8; l++){
-
-painted[l] = false;
-content[l]='';
-
 
 </body>
 
