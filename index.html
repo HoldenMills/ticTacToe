@@ -1,37 +1,146 @@
-
-<!DOCTYPE html>
-<html>
-
+<!DOCTYPE HTML>
 <head>
-  <title>A tic-tac-toe client</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js" defer charset="utf-8"></script>
-  <script type="text/javascript" src="http://ttt.wdibos.com/js/resource-watcher-0.1.0.js" defer charset="utf-8"></script>
-  <script type="text/javascript" src="index.js" defer charset="utf-8"></script>
-<!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="javascript.js" ></script>
-<link rel="stylesheet" type="text/css" href="style.css">-->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
 
+<style>
+  .board {
+    background-color: black;
+    height: 540px;
+    width: 540px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .board button {
+    background-color: red;
+    height: 120px;
+    width: 120px;
+    display: inline-block;
+    margin: 30px;
+    float: right;
+  }
+
+  #main-button {
+    border-color: blue;
+    width: 100px;
+    height: 60px
+
+  }
+  </style>
+
+  h1 {
+    text-align: center;
+  }
+
 <h1>Let's Play A Game</h1>
+
+<!--<form id="register">
+    <input name="email" type="text" placeholder="email">
+    <input name="password" type="password" placeholder="password">
+    <input name="password_confirmation" type="password" placeholder="password confirmation">
+    <input name="register" type="submit" value="Register">
+  </form>
+  <form id="login">
+    <input name="email" type="text" placeholder="email">
+    <input name="password" type="password" placeholder="password">
+    <input name="login" type="submit" value="Login">
+  </form>
+  <form id="list-games">
+    <input name="list-games" type="submit" value="List Games">
+    <input class="token" name="token" type="hidden">
+  </form>
+  <form id="create-game">
+    <input name="create-game" type="submit" value="Create Game">
+    <input class="token" name="token" type="hidden">
+  </form>
+  <form id="show-game">
+    <label for="show-id">Id:</label>
+    <input id="show-id" type="text" size="4">
+    <input name="show-game" type="submit" value="Show Game">
+    <input class="token" name="token" type="hidden">
+ </form>
+  <form id="join-game">
+    <label for="join-id">Id:</label>
+    <input id="join-id" type="text" size="4">
+    <input name="join-game" type="submit" value="Join Game">
+    <input class="token" name="token" type="hidden">
+ </form>
+ <form id="mark-cell">
+    <label for="mark-id">Id:</label>
+    <input id="mark-id" type="text" size="4">
+    <label for="mark-index">Index:</label>
+    <input name="index" id="mark-index" type="text" size="4">
+    <label for="mark-value">Value:</label>
+    <input name="value" id="mark-value" type="text" size="4">
+    <input name="mark-cell" type="submit" value="Mark Cell">
+    <input class="token" name="token" type="hidden">
+  </form>
+  <form id="watch-game">
+    <label for="watch-id">Id:</label>
+    <input id="watch-id" type="text" size="4">
+    <label for="watch-index">Index:</label>
+    <input name="index" id="watch-index" type="text" size="4">
+    <label for="watch-value">Value:</label>
+    <input name="value" id="watch-value" type="text" size="4">
+    <input name="watch-game" type="submit" value="Watch Game">
+    <input class="token" name="token" type="hidden">
+  </form>
+  <br>
+  <label for="result">Result</label>
+  <textarea id="result"></textarea>-->
+
+
+
+
+
+
+
 
 <button id="main-button" name="button"></button>
 
 <div class="board">
-  <p data-square="Box1"></p>
-  <p data-square="Box2"></p>
-  <p data-square="Box3"></p>
-  <p data-square="Box4"></p>
-  <p data-square="Box5"></p>
-  <p data-square="Box6"></p>
-  <p data-square="Box7"></p>
-  <p data-square="Box8"></p>
-  <p data-square="Box9"></p>
+  <button data-square="b1"></button>
+  <button data-square="b2"></button>
+  <button data-square="b3"></button>
+  <button data-square="b4"></button>
+  <button data-square="b5"></button>
+  <button data-square="b6"></button>
+  <button data-square="b7"></button>
+  <button data-square="b8"></button>
+  <button data-square="b9"></button>
 </div>
+
+//Instanciate Arrays
+        window.onload=function();
+painted = new Array();
+content = new Array();
+
+winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+
+
+for(var l = 0; l <= 8; l++){
+
+painted[l] = false;
+content[l]='';
+
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
