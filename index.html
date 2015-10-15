@@ -3,35 +3,41 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="javascript.js"></script>
+
 </head>
 
 <body>
 
-<script>
-function myFunction() {
-    document.getElementById("button").innerHTML = "Hello World";
-}
-</script>
 
 <h1>Let's Play a Game</h1>
 
 <button id="main-button" name="button"></button>
 
-<div class="board">
-  <button onclick="javascript:myFunction();"document.getElementsByClassName"this.innerHTML='X'"(board)></button>
-  <button id = "b1" onclick="boxClicked(1)"></button>
-  <button id = "b2" onclick="boxClicked(2)"></button>
-  <button id = "b3" onclick="boxClicked(3)"></button>
-  <button id = "b4" onclick="boxClicked(4)"></button>
-  <button id = "b5" onclick="boxClicked(5)"></button>
-  <button id = "b6" onclick="boxClicked(6)"></button>
-  <button id = "b7" onclick="boxClicked(7)"></button>
-  <button id = "b8" onclick="boxClicked(8)"></button>
-
+<div class="board" id='grid'>
+  <div class="row">
+   <button id = "b0" data-cell="0" ></button>
+   <button id = "b1" data-cell="1" ></button>
+   <button id = "b2" data-cell="2" ></button>
+<!--    <span id = "b0" class="button">0</span>
+    <span id = "b1" class="button">1</span>
+    <span id = "b2" class="button" >2</span>
+    -->
+  </div>
+  <div class="row">
+    <button id = "b3" data-cell="3" ></button>
+    <button id = "b4" data-cell="4" ></button>
+    <button id = "b5" data-cell="5" ></button>
+  </div>
+  <div class="row">
+    <button id = "b6" data-cell="6" ></button>
+    <button id = "b7" data-cell="7" ></button>
+    <button id = "b8" data-cell="8" ></button>
+  </div>
 
 </div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascript.js"></script>
 
 </body>
 

@@ -1,20 +1,20 @@
 
   .board {
-    background-color: black;
-    height: 540px;
-    width: 540px;
+    background-color: white;
+    height: 740px;
+    width: 740px;
     overflow: auto;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .board p {
-    background-color: red;
+  .board button {
+    color: red;
     height: 120px;
     width: 120px;
-    display: inline-block;
+    /* display: inline-block;*/
     margin: 30px;
-    float: right;
+    /* float: right;*/
   }
 
   #main-button {
@@ -27,6 +27,7 @@
   h1 {
     text-align: center;
   }
+
 
 
 
