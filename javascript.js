@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   //Step 2: create an array of squares
   // creates array of empty strings
-  var box = ['','','','','','','','','']
+  var box = ['','','','','','','','',''];
 
 //$('main-button').html('Click to Play')
   //sets X to last clicked (selected) box
@@ -24,7 +24,7 @@ $(document).ready(function() {
     //getting cell number selected by the click from line 15
     var cellNumberClicked = $(elementSelected).data('cell');
 
-    console.log("clicked " + cellNumberClicked);
+    console.log("click" + cellNumberClicked);
     //Step 5: Change the cell HTML to X or O
     //This code alternates between X and O
     if(lastSelected === 'X') {
@@ -38,38 +38,52 @@ $(document).ready(function() {
       $(elementSelected).html('X');
         lastSelected = 'X';
         box[cellNumberClicked] = 'X';
-    };
-
+    }
+  }
   //Step 6: check for winner
   // Checks for all possible winning combinations with X or O
-  var getWinner = function() {
-    if (box[0] == 'O' && box[1] == 'O' && box[2] == 'O' ||
-        box[3] == 'O' && box[4] == 'O' && box[5] == 'O' ||
-        box[6] == 'O' && box[7] == 'O' && box[8] == 'O' ||
-        box[0] == 'O' && box[3] == 'O' && box[6] == 'O' ||
-        box[1] == 'O' && box[4] == 'O' && box[7] == 'O' ||
-        box[2] == 'O' && box[5] == 'O' && box[8] == 'O' ||
-        box[0] == 'O' && box[4] == 'O' && box[8] == 'O' ||
-        box[2] == 'O' && box[4] == 'O' && box[6] == 'O') {
-      return("Player O Won!");
-      console.log(getWinner);
+  );
+  var winner = function getWinner() {
+    if (box[0] == 'O' && box[1] == 'O' && box[2] == 'O') {
+      console.log("Player O Wins");
     }
+    else if (box[3] == 'O' && box[4] == 'O' && box[5] == 'O') {
+      console.log("Player O Wins");
+    }
+    else if (box[6] == 'O' && box[7] == 'O' && box[8] == 'O') {
+      console.log("Player O Wins");
+    }
+    else if (box[0] == 'O' && box[3] == 'O' && box[6] == 'O') {
+      console.log("Player O Wins");
+    }
+    else if (box[1] == 'O' && box[4] == 'O' && box[7] == 'O') {
+      console.log("Player O Wins");
+    }
+    else if (box[2] == 'O' && box[5] == 'O' && box[8] == 'O') {
+      console.log("Player O Wins");
+    }
+    else if (box[0] == 'O' && box[4] == 'O' && box[8] == 'O') {
+      console.log("Player O Wins");
+    }
+    else if (box[2] == 'O' && box[4] == 'O' && box[6] == 'O') {
+      console.log("Player O Wins");
+    }
+
     else if (
-        box[0] == 'X' && box[1] == 'X' && box[2] == 'X' ||
-        box[3] == 'X' && box[4] == 'X' && box[5] == 'X' ||
-        box[6] == 'X' && box[7] == 'X' && box[8] == 'X' ||
-        box[0] == 'X' && box[3] == 'X' && box[6] == 'X' ||
-        box[1] == 'X' && box[4] == 'X' && box[7] == 'X' ||
-        box[2] == 'X' && box[5] == 'X' && box[8] == 'X' ||
-        box[0] == 'X' && box[4] == 'X' && box[8] == 'X' ||
-        box[2] == 'X' && box[4] == 'X' && box[6] == 'X') {
-      return("Player X Won!");
-      console.log(getWinner);
+        $box[0] === 'X' && $box[1] === 'X' && $box[2] === 'X' ||
+        box[3] === 'X' && box[4] === 'X' && box[5] === 'X' ||
+        box[6] === 'X' && box[7] === 'X' && box[8] === 'X' ||
+        box[0] === 'X' && box[3] === 'X' && box[6] === 'X' ||
+        box[1] === 'X' && box[4] === 'X' && box[7] === 'X' ||
+        box[2] === 'X' && box[5] === 'X' && box[8] === 'X' ||
+        box[0] === 'X' && box[4] === 'X' && box[8] === 'X' ||
+        box[2] === 'X' && box[4] === 'X' && box[6] === 'X') {
+      //return("Player X Won!");
+      console.log("Player X Wins");
     }
-    else alert("Nobody Wins!");
+
+    else {
+      alert("Nobody Wins!");
+    }
   };
-
 });
-});
-
-

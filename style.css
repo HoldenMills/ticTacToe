@@ -1,9 +1,10 @@
 
   .board {
+    text-align: : center;
     background-color: white;
     height: 740px;
-    width: 740px;
-    overflow: auto;
+    width: 640px;
+    /*overflow: auto;*/
     margin-left: auto;
     margin-right: auto;
   }
@@ -12,20 +13,23 @@
     color: red;
     height: 120px;
     width: 120px;
-    /* display: inline-block;*/
+    /*display: inline-block;*/
     margin: 30px;
     /* float: right;*/
+    font-size: 60px;
   }
 
-  #main-button {
+  /*#main-button {
     border-color: blue;
     width: 100px;
-    height: 60px
+    height: 60px*/
 
   }
 
   h1 {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
