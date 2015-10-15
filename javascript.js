@@ -51,7 +51,8 @@ $(document).ready(function() {
         box[2] == 'O' && box[5] == 'O' && box[8] == 'O' ||
         box[0] == 'O' && box[4] == 'O' && box[8] == 'O' ||
         box[2] == 'O' && box[4] == 'O' && box[6] == 'O') {
-      alert("Player O Won!");
+      return("Player O Won!");
+      console.log(getWinner);
     }
     else if (
         box[0] == 'X' && box[1] == 'X' && box[2] == 'X' ||
@@ -62,7 +63,8 @@ $(document).ready(function() {
         box[2] == 'X' && box[5] == 'X' && box[8] == 'X' ||
         box[0] == 'X' && box[4] == 'X' && box[8] == 'X' ||
         box[2] == 'X' && box[4] == 'X' && box[6] == 'X') {
-      alert("Player X Won!");
+      return("Player X Won!");
+      console.log(getWinner);
     }
     else alert("Nobody Wins!");
   };
