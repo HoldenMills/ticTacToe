@@ -26,7 +26,26 @@
 
   }
 
+  body {
+    background-color: blue;
+  }
+
+  div {
+    background-color: blue;
+  }
+
+
   h1 {
+    font-family: 'Special Elite';
+    font-size: 40px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 {
+    font-family: 'Special Elite';
+    font-size: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;

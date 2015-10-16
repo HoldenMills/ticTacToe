@@ -66,7 +66,7 @@ $(document).ready(function() {
       console.log("Player O Wins");
     }
     else if (box[2] == 'O' && box[4] == 'O' && box[6] == 'O') {
-      console.log("Player O Wins");
+      alert("Player O Wins");
     }
 
     else if (
@@ -79,7 +79,7 @@ $(document).ready(function() {
         box[0] === 'X' && box[4] === 'X' && box[8] === 'X' ||
         box[2] === 'X' && box[4] === 'X' && box[6] === 'X') {
       //return("Player X Won!");
-      console.log("Player X Wins");
+      alert("Player X Wins");
     }
 
     else {
