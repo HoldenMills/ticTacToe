@@ -30,6 +30,7 @@ $(document).ready(function() {
     //This code alternates between X and O
     if(lastSelected === 'X') {
       $(elementSelected).html('X');
+      getWinner(lastSelected);
         lastSelected = 'O';
         //Step 5: add the X or O to boxes
         box[cellNumberClicked] = 'X';
@@ -37,6 +38,7 @@ $(document).ready(function() {
     //If previous element was O then return X
     else {
       $(elementSelected).html('O');
+      getWinner(lastSelected);
         lastSelected = 'X';
         box[cellNumberClicked] = 'O';
     }
@@ -47,30 +49,44 @@ $(document).ready(function() {
 
  var boxes = $('#grid').children();
 
-  var winner = function getWinner() {
+  var getWinner = function getWinner(lastSelected) {
      //rows
     for(var index = 0; index < 3; index++) {
-      if boxes.eq(3 * index).text() === boxes.eq(3 * index + 1).text() &&
-         boxes.eq(3 * index).text() === boxes.eq(3 * index + 2).text() &&
+      if (boxes.eq(3 * index).text() === lastSelected &&
+         boxes.eq(3 * index + 1).text() === lastSelected &&
+         boxes.eq(3 * index + 2).text() === lastSelected &&
          boxes.eq(3 * index).text() !== '')
-         { return true; }
+         {
+          console.log(lastSelected + 'won rows');
+          return true;
+      }
+    }
 
   // cols
  for (index = 0; index < 3; index++) {
-   if (boxes.eq(index).text() === boxes.eq(index + 3).text() &&
-       boxes.eq(index).text() === boxes.eq(index + 6).text() &&
+   if (boxes.eq(index).text() === lastSelected &&
+       boxes.eq(index + 3).text() === lastSelected &&
+       boxes.eq(index + 6).text() === lastSelected &&
        boxes.eq(index).text() !== '')
-       { return true; }
- }
+       {
+        console.log(lastSelected + 'won cols');
+        return true;
+    }
+  }
 
  // diag
- if ((boxes.eq(0).text() === boxes.eq(4).text() &&
-    boxes.eq(0).text() === boxes.eq(8).text() &&
+ if ((boxes.eq(0).text() === lastSelected &&
+    boxes.eq(4).text() === lastSelected &&
+    boxes.eq(8).text() === lastSelected &&
     boxes.eq(8).text() !== '') ||
-    (boxes.eq(2).text() === boxes.eq(4).text() &&
-    boxes.eq(2).text() === boxes.eq(6).text() &&
-    boxes.eq(2).text() !== '')
-    { return true; }
+    (boxes.eq(2).text() === lastSelected &&
+    boxes.eq(4).text() === lastSelected &&
+    boxes.eq(6).text() === lastSelected &&
+    boxes.eq(2).text() !== ''))
+    {
+      console.log(lastSelected + 'won diags');
+      return true;
+  }
   return false;
 };
 
