@@ -1,5 +1,6 @@
 //ruby -r un -e httpd . -p 5000//
 
+
 //Step 1: determine when page loads
 //runs function after (document) loads treats page like a giant function
 $(document).ready(function() {
@@ -28,36 +29,50 @@ $(document).ready(function() {
     //Step 5: Change the cell HTML to X or O
     //This code alternates between X and O
     if(lastSelected === 'X') {
-      $(elementSelected).html('O');
+      $(elementSelected).html('X');
         lastSelected = 'O';
         //Step 5: add the X or O to boxes
-        box[cellNumberClicked] = 'O';
+        box[cellNumberClicked] = 'X';
     }
     //If previous element was O then return X
     else {
-      $(elementSelected).html('X');
+      $(elementSelected).html('O');
         lastSelected = 'X';
-        box[cellNumberClicked] = 'X';
+        box[cellNumberClicked] = 'O';
     }
   }
   //Step 6: check for winner
   // Checks for all possible winning combinations with X or O
   );
 
-  for(var index = 0; index < 3; index++) {
-    if boxGrid.eq(3 * index).text() === boxGrid.eq(3 * index + 1).text() &&
-      boxGrid.eq(3 * index).text() === boxGrid.eq(3 * index + 2).text() &&
-      boxGrid.eq(3 * index).text() !== '') {
-      return true;
-}
-  }
+ var boxes = $('#grid').children();
 
   var winner = function getWinner() {
-     for(var index = 0; index < 3; index++) {
-        if boxGrid.eq(3 * index).text() === boxGrid.eq(3 * index + 1).text() &&
-           boxGrid.eq(3 * index).text() === boxGrid.eq(3 * index + 2).text() &&
-           boxGrid.eq(3 * index).text() !== '') {
-           return true;
+     //rows
+    for(var index = 0; index < 3; index++) {
+      if boxes.eq(3 * index).text() === boxes.eq(3 * index + 1).text() &&
+         boxes.eq(3 * index).text() === boxes.eq(3 * index + 2).text() &&
+         boxes.eq(3 * index).text() !== '')
+         { return true; }
+
+  // cols
+ for (index = 0; index < 3; index++) {
+   if (boxes.eq(index).text() === boxes.eq(index + 3).text() &&
+       boxes.eq(index).text() === boxes.eq(index + 6).text() &&
+       boxes.eq(index).text() !== '')
+       { return true; }
+ }
+
+ // diag
+ if ((boxes.eq(0).text() === boxes.eq(4).text() &&
+    boxes.eq(0).text() === boxes.eq(8).text() &&
+    boxes.eq(8).text() !== '') ||
+    (boxes.eq(2).text() === boxes.eq(4).text() &&
+    boxes.eq(2).text() === boxes.eq(6).text() &&
+    boxes.eq(2).text() !== '')
+    { return true; }
+  return false;
+};
 
   $(function(){
   'use strict';
@@ -231,10 +246,10 @@ $(document).ready(function() {
         box[2] === 'X' && box[4] === 'X' && box[6] === 'X') {
       //return("Player X Won!");
       alert("Player X Wins");*/
-    }
+    // }
 
-    else {
-      alert("Nobody Wins!");
-    }
-  };
+    // else {
+    //   alert("Nobody Wins!");
+    // }
+  // };
 });
