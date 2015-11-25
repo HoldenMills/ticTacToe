@@ -261,6 +261,7 @@ $(document).ready(function() {
         box[0] === 'X' && box[4] === 'X' && box[8] === 'X' ||
         box[2] === 'X' && box[4] === 'X' && box[6] === 'X') {
       //return("Player X Won!");
+<<<<<<< 1b608468679b2893441f946274b13020094bd4db
       alert("Player X Wins");*/
     // }
 
