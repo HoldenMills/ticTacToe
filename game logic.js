@@ -30,7 +30,7 @@ player2 = o
  var getWinner = function() {
     var winner;
 
-    /*winningCombinations = [[b4, b5, b6],[b7, b8, b9],[b1, b4, b7],[b2, b5, b8],[b3, b6, b9],[b1, b5, b9],[b3, b5, b7]]
+    winningCombinations = [[b4, b5, b6],[b7, b8, b9],[b1, b4, b7],[b2, b5, b8],[b3, b6, b9],[b1, b5, b9],[b3, b5, b7]]
       return player1
     ]
 
@@ -48,4 +48,4 @@ player2 = o
     else {
       return tie;
     }
-  }; */
+  };
