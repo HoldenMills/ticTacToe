@@ -42,52 +42,57 @@ $(document).ready(function() {
         lastSelected = 'X';
         box[cellNumberClicked] = 'O';
     }
-  }
+  });
   //Step 6: check for winner
   // Checks for all possible winning combinations with X or O
-  );
 
- var boxes = $('#grid').children();
+  var boxes = $('#grid').children();
 
   var getWinner = function getWinner(lastSelected) {
      //rows
     for(var index = 0; index < 3; index++) {
       if (boxes.eq(3 * index).text() === lastSelected &&
-         boxes.eq(3 * index + 1).text() === lastSelected &&
-         boxes.eq(3 * index + 2).text() === lastSelected &&
-         boxes.eq(3 * index).text() !== '')
-         {
-          console.log(lastSelected + 'won rows');
-          return true;
+        boxes.eq(3 * index + 1).text() === lastSelected &&
+        boxes.eq(3 * index + 2).text() === lastSelected &&
+        boxes.eq(3 * index).text() !== '')
+        {
+        alert('Player ' + lastSelected + ' won!');
+        return true;
       }
     }
 
   // cols
- for (index = 0; index < 3; index++) {
-   if (boxes.eq(index).text() === lastSelected &&
-       boxes.eq(index + 3).text() === lastSelected &&
-       boxes.eq(index + 6).text() === lastSelected &&
-       boxes.eq(index).text() !== '')
-       {
-        console.log(lastSelected + 'won cols');
+   for (index = 0; index < 3; index++) {
+     if (boxes.eq(index).text() === lastSelected &&
+        boxes.eq(index + 3).text() === lastSelected &&
+        boxes.eq(index + 6).text() === lastSelected &&
+        boxes.eq(index).text() !== '')
+        {
+        alert('Player ' + lastSelected + ' won!');
         return true;
+        }
     }
-  }
 
  // diag
- if ((boxes.eq(0).text() === lastSelected &&
-    boxes.eq(4).text() === lastSelected &&
-    boxes.eq(8).text() === lastSelected &&
-    boxes.eq(8).text() !== '') ||
-    (boxes.eq(2).text() === lastSelected &&
-    boxes.eq(4).text() === lastSelected &&
-    boxes.eq(6).text() === lastSelected &&
-    boxes.eq(2).text() !== ''))
-    {
-      console.log(lastSelected + 'won diags');
+   if ((boxes.eq(0).text() === lastSelected &&
+      boxes.eq(4).text() === lastSelected &&
+      boxes.eq(8).text() === lastSelected &&
+      boxes.eq(8).text() !== '') ||
+      (boxes.eq(2).text() === lastSelected &&
+      boxes.eq(4).text() === lastSelected &&
+      boxes.eq(6).text() === lastSelected &&
+      boxes.eq(2).text() !== ''))
+      {
+      alert('Player ' + lastSelected + ' won!');
       return true;
+    }
+
+      if (boxes.every.text() !== '')
+        alert('You\'re all miserable and weak!  Tie game' )
+    };
+  else {
+    return false;
   }
-  return false;
 };
 
   $(function(){
