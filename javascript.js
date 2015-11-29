@@ -87,7 +87,7 @@ $(document).ready(function() {
       return true;
     }
 
-      if (boxes.every.text() !== '')
+      if getWinner === false && (boxes.every.text() !== '')
         alert('You\'re all miserable and weak!  Tie game' )
     };
   else {
