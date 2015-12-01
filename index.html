@@ -2,56 +2,34 @@
 <html>
 
 <head>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href='https://fonts.googleapis.com/css?family=Kranky|Special+Elite' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Eater' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
+  <h1>Let's Play a Game</h1>
 
-<h1>Tic-Tac-Toe</h1>
-<h2>The Deluxe Version</h2>
-<div>
-     <h2>register</h2>
-      <form id="register">
-         <input name="email" type="text" placeholder="email">
-         <input name="password" type="password" placeholder="password">
-         <input name="password_confirmation" type="password" placeholder="password confirmation">
-         <input name="register" type="submit" value="Register" class="top-reg-button button-look">
-     </form>
-   </div>
-     <div>
-       <h2>login</h2>
-       <form id="login">
-         <input name="email" type="text" placeholder="email">
-         <input name="password" type="password" placeholder="password">
-         <input name="login" type="submit" value="Login" class="top-login-button button-look">
-       </form>
-     </div>
-  <!-- <input id="email" type="text" value="" size="15" placeholder="e-mail">
-  <input id="password" type="password" size="10" value="" placeholder="password">
-  <input id="login" type="button" value="Login">
-  <input id="register" type="button" value="Register">
- -->
-  <br>
-  <label for="id">Id:</label>
-  <input id="id" type="text" size="5" placeholder="">
-  <label for="token">Token:</label>
-  <input id="token" size="30">
-  <br>
-
-  <label for="games">Games:</label>
-  <div id="games">
-    <input id="games-index" type="button" value="Index">
-    <input id="games-create" type="button" value="Create">
-    <input id="game-show" type="button" value="Show">
-    <input id="game-join" type="button" value="Join">
-    <input id="game-watch" type="button" value="Listen">
+  <div>
+    <form id="register">
+      <input name="email" type="text" placeholder="email">
+      <input name="password" type="password" placeholder="password">
+      <input name="password_confirmation" type="password" placeholder="password confirmation">
+      <input name="register" type="submit" value="Register" class="top-reg-button button-look">
+    </form>
   </div>
 
-<!-- <button id="main-button" name="button"></button> -->
+  <div>
+    <form id="login">
+      <input name="email" type="text" placeholder="email">
+      <input name="password" type="password" placeholder="password">
+      <input name="login" type="submit" value="Login" class="top-login-button button-look">
+    </form>
+  </div>
 
-<div class="board" id='grid'>
+  <div class="board" id='grid'>
     <button data-cell="0" ></button>
     <button data-cell="1" ></button>
     <button data-cell="2" ></button>
@@ -61,7 +39,7 @@
     <button data-cell="6" ></button>
     <button data-cell="7" ></button>
     <button data-cell="8" ></button>
-</div>
+  </div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 <script src="http://ttt.wdibos.com/js/resource-watcher-0.1.0.js" type="text/javascript" defer charset="utf-8"></script>

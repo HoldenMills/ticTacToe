@@ -1,55 +1,38 @@
 
-  .board {
-    text-align: : center;
-    background-color: white;
-    height: 740px;
-    width: 640px;
-    /*overflow: auto;*/
-    margin-left: auto;
-    margin-right: auto;
-  }
+.board {
+  text-align: : center;
+  height: 640px;
+  width: 640px;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .board button {
-    color: red;
-    height: 120px;
-    width: 120px;
-    /*display: inline-block;*/
-    margin: 30px;
-    /* float: right;*/
-    font-size: 60px;
-  }
+.board button {
+  background-color: rgb(158, 10, 10);
+  height: 120px;
+  width: 120px;
+  margin: 30px;
+  font-size: 70px;
+  font-family: 'Special Elite';
+}
 
-  /*#main-button {
-    border-color: blue;
-    width: 100px;
-    height: 60px*/
+body {
+  background-image: url("http://thisisinfamous.com/wp-content/uploads/2014/08/saw_v_2_by_hassoomi-d31v9zz.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: black;
+}
 
-  }
+h1 {
+  font-family: 'Eater';
+  font-size: 50px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(180, 11, 10);
+}
 
-  body {
-    background-image: url("saw_movie.jpg");
-  }
-
-  div {
-    background-color: blue;
-  }
-
-
-  h1 {
-    font-family: 'Special Elite';
-    font-size: 40px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  h2 {
-    font-family: 'Special Elite';
-    font-size: 30px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
 
 
