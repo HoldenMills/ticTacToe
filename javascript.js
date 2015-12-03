@@ -1,87 +1,78 @@
-$(document).ready(function() {
+var game = {
+  board: ['','','','','','','','',''],
+  token: 'X'
+};
 
-  var box = ['','','','','','','','',''];
-  var lastSelected = 'X';
+var updateBoard = function updateBoard (index) {
+  game.board[index] = game.token;
+};
 
-  $( "#grid").on( "click", function(event) {
-    var elementSelected = event.target;
-    var cellNumberClicked = $(elementSelected).data('cell');
-    console.log("click" + cellNumberClicked);
+var updateUi = function updateUi (element) {
+  $(element).html(game.token);
+};
 
-    if(lastSelected === 'X') {
-      getWinner(lastSelected);
-      $(elementSelected).html('X');
-        lastSelected = 'O';
-        box[cellNumberClicked] = 'X';
-    }
+var toggleTurn = function toggleTurn () {
+  game.token === 'X' ? game.token = 'O' : game.token = 'X';
+};
 
-    else {
-      $(elementSelected).html('O');
-      getWinner(lastSelected);
-        lastSelected = 'X';
-        box[cellNumberClicked] = 'O';
-    }
+var markCell = function markCell (element) {
+  updateBoard($(element).data('cell'));
+  updateUi(element);
+};
+
+var checkRows = function checkRows () {
+  game.board.slice(0, 3).every(function (cell) {
+    return cell === game.token;
   });
 
+  game.board.slice(3, 6).every(function (cell) {
+    return cell === game.token;
+  });
+
+  game.board.slice(6, 9).every(function (cell) {
+    return cell === game.token;
+  });
+
+  return false;
+};
+
+var checkColumns = function checkColumns () {
+  if (([game.board[2], game.board[5], game.board[8]].every(token)) === token ||
+     ([game.board[2], game.board[5], game.board[8]].every(token)) === token ||
+     ([game.board[2], game.board[5], game.board[8]].every(token)) === token) {
+    return true;
+    }
+  else {
+    return false;
+  }
+};
+
+var checkDiagonals = function checkDiagonals () {
+  if (([game.board[0], game.board[4], game.board[8]].every(token)) === token ||
+     ([game.board[2], game.board[4], game.board[6]].every(token)) === token) {
+  return true;
+  }
+  else {
+    return false;
+  }
+};
+
+var checkWinner = function checkWinner () {
+  // check functions should return a token or null
+  if (checkRows() || checkColumns() || checkDiagonals()) {
+    alert(game.token + ' is the winner!');
+  }
+};
+
+var main = function(event) {
   var boxes = $('#grid').children();
 
-  var getWinner = function getWinner(lastSelected) {
+  markCell(event.target)
+  toggleTurn();
 
-     //rows
-    for(var index = 0; index < 3; index++) {
-      if (boxes.eq(3 * index).text() === lastSelected &&
-        boxes.eq(3 * index + 1).text() === lastSelected &&
-        boxes.eq(3 * index + 2).text() === lastSelected &&
-        boxes.eq(3 * index).text() !== '')
-        {
-          alert('Player ' + lastSelected + ' won!');
-          return true;
-      }
-    }
+  checkWinner();
+};
 
-    // cols
-    for (index = 0; index < 3; index++) {
-      if (boxes.eq(index).text() === lastSelected &&
-        boxes.eq(index + 3).text() === lastSelected &&
-        boxes.eq(index + 6).text() === lastSelected &&
-        boxes.eq(index).text() !== '')
-        {
-          alert('Player ' + lastSelected + ' won!');
-          return true;
-      }
-    }
-
-   // diag
-   if ((boxes.eq(0).text() === lastSelected &&
-      boxes.eq(4).text() === lastSelected &&
-      boxes.eq(8).text() === lastSelected &&
-      boxes.eq(8).text() !== '') ||
-      (boxes.eq(2).text() === lastSelected &&
-      boxes.eq(4).text() === lastSelected &&
-      boxes.eq(6).text() === lastSelected &&
-      boxes.eq(2).text() !== ''))
-      {
-        alert('Player ' + lastSelected + ' won!');
-        return true;
-    }
-  };
-
-  // for(var index = 0; index < 9; index++) {
-  if (getWinner === false &&
-    box[0] !== '' &&
-    box[1] !== '' &&
-    box[2] !== '' &&
-    box[3] !== '' &&
-    box[4] !== '' &&
-    box[5] !== '' &&
-    box[6] !== '' &&
-    box[7] !== '' &&
-    box[8] !== '' )
-    {
-      alert('Tie');
-      return true;
-    };
-  return false;
+$(document).ready(function() {
+  $( "#grid").on( "click", main);
 });
-
-
