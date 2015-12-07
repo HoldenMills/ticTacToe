@@ -1,8 +1,15 @@
+$(document).ready(function() {
+  $(".board").on("click",":button",function(event) {
+
 var game = {
   board: ['','','','','','','','',''],
   token: 'X'
 };
 
+var markCell = function markCell (element) {
+  updateBoard($(element).data('cell'));
+  updateUi(element);
+};
 var updateBoard = function updateBoard (index) {
   game.board[index] = game.token;
 };
@@ -12,13 +19,10 @@ var updateUi = function updateUi (element) {
 };
 
 var toggleTurn = function toggleTurn () {
-  game.token === 'X' ? game.token = 'O' : game.token = 'X';
+  game.token === 'O' ? game.token = 'X' : game.token = 'O';
 };
 
-var markCell = function markCell (element) {
-  updateBoard($(element).data('cell'));
-  updateUi(element);
-};
+
 
 var checkRows = function checkRows () {
   game.board.slice(0, 3).every(function (cell) {
@@ -37,9 +41,9 @@ var checkRows = function checkRows () {
 };
 
 var checkColumns = function checkColumns () {
-  if (([game.board[2], game.board[5], game.board[8]].every(token)) === token ||
-     ([game.board[2], game.board[5], game.board[8]].every(token)) === token ||
-     ([game.board[2], game.board[5], game.board[8]].every(token)) === token) {
+  if (([game.board[2], game.board[5], game.board[8]].every(updateBoard)) === game.token ||
+     ([game.board[2], game.board[5], game.board[8]].every(updateBoard)) === game.token ||
+     ([game.board[2], game.board[5], game.board[8]].every(updateBoard)) === game.token) {
     return true;
     }
   else {
@@ -48,8 +52,8 @@ var checkColumns = function checkColumns () {
 };
 
 var checkDiagonals = function checkDiagonals () {
-  if (([game.board[0], game.board[4], game.board[8]].every(token)) === token ||
-     ([game.board[2], game.board[4], game.board[6]].every(token)) === token) {
+  if (([game.board[0], game.board[4], game.board[8]].every(updateBoard)) === game.token ||
+     ([game.board[2], game.board[4], game.board[6]].every(updateBoard)) === game.token) {
   return true;
   }
   else {
@@ -64,15 +68,12 @@ var checkWinner = function checkWinner () {
   }
 };
 
-var main = function(event) {
-  var boxes = $('#grid').children();
+
 
   markCell(event.target)
   toggleTurn();
 
   checkWinner();
-};
-
-$(document).ready(function() {
-  $( "#grid").on( "click", main);
 });
+});
+
