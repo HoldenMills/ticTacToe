@@ -7,26 +7,26 @@ $(document).ready(function() {
 
   $(".board").on("click",":button",function() {
 
-    var playGame = function (element) {
+    // var playGame = function (element) {
       var markCell = function markCell (element) {
         updateBoard($(element).data('cell'));
         updateUi(element);
+        toggleTurn(element);
       };
 
       var updateBoard = function updateBoard (index) {
         game.board[index] = game.token;
-        checkWinner(game);
       };
 
       var updateUi = function updateUi (element) {
-        markCell(event.target);
         $(element).html(game.token);
       };
 
       var toggleTurn = function toggleTurn (element) {
         game.token === 'X' ? game.token = 'O' : game.token = 'X';
       };
-    };
+
+    markCell(event.target);
 
     var checkRows = function checkRows () {
       game.board.slice(0, 3).every(function (cell) {
@@ -62,7 +62,7 @@ $(document).ready(function() {
       }
     };
 
-playGame(event.target);
+// playGame(event.target);
 
   });
 });
