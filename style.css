@@ -18,11 +18,13 @@
 }
 
 body {
-  background-image: url("images/saw_movie.jpg");
-  background-repeat: no-repeat;
   background-position: top center;
   background-color: black;
-  background-size: 1280px 846px;
+  width: 100%;
+  max-width: 1920px;
+  background: url("images/saw_movie.jpg") no-repeat;
+  background-size: 100%;
+  background-color: black;
 }
 
 h1 {
